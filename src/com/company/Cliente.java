@@ -18,6 +18,10 @@ public class Cliente {
     return nombre;
   }
 
+  public void agregarAlergia(Droga unaDroga){
+    esAlergicoA.add(unaDroga);
+  }
+
   public ArrayList<Droga> getEsAlergicoA() {
     return esAlergicoA;
   }

@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.droga.Droga;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.util.ArrayList;
@@ -7,8 +8,8 @@ import java.util.ArrayList;
 public class Drogueria {
 
   private String nombre;
-  private ArrayList<Cliente> clientes;
-  private ArrayList<Medicamento> medicamentosEnStock;
+  private ArrayList<Cliente> clientes; //agregado al cuete!!
+  private ArrayList<Medicamento> medicamentosEnStock; //agregado al recontra cuete!!
 
   public Drogueria(String nombre) {
     this.nombre = nombre;
@@ -16,18 +17,23 @@ public class Drogueria {
     this.medicamentosEnStock = new ArrayList<Medicamento>();
   }
 
+  //agregado al cuete!!
   public void agregarMedicamentosAlStock(Medicamento unMedicamento){
-    //todo
+    medicamentosEnStock.add(unMedicamento);
   }
 
+  //tambien agregado al cuete!!
   public void agregarCliente(Cliente unCliente){
-    //todo
+    clientes.add(unCliente);
   }
 
   public Boolean chequearAlergia(Cliente unCliente, Medicamento unMedicamento){
-    return true;
-    //todo
+    Boolean esAlergico = false;
+    for (Droga droga : unCliente.getEsAlergicoA()) {
+      esAlergico = unMedicamento.contieneDroga(droga);
+      if(esAlergico) break;
+    }
+    return esAlergico;
   }
-
 
 }

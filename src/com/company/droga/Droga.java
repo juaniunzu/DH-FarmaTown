@@ -8,4 +8,7 @@ public abstract class Droga {
     this.nombre = nombre;
   }
 
+  public String getNombre() {
+    return nombre;
+  }
 }

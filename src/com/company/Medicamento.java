@@ -15,12 +15,19 @@ public class Medicamento {
   }
 
   public void agregarComponente(Droga unaDroga){
-    // TODO: 12/03/2020
+    componentes.add(unaDroga);
   }
   
   public void informarComponentes(){
-    //todo
+    for (Droga componente : componentes) {
+      System.out.println(componente.getNombre());
+    }
   }
+
+  public Boolean contieneDroga(Droga unaDroga){
+    return(this.componentes.contains(unaDroga));
+  }
+
 
   public String getNombre() {
     return nombre;
